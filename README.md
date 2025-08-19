@@ -127,25 +127,54 @@ def games():
             # gets here when len(word_letters) == 0 OR when lives == 0
           if lives == 0:
               print('You died, sorry. The word was', word)
+              mes = input("That was so fun! Would you like to play again? (y/n): ")
+              if mes == "y":
+                 hangman();
+              elif mes == "Y":
+                 hangman();
+              elif mes == "n":
+                 print("Okay then! have a nice day.")
+              elif mes == "N":
+                 print("Okay then! have a nice day.")
+              else:
+                 print("Invalid Input");
           else:
               print('You guessed the word', word, '!!')
+              mes = input("That was so fun! Would you like to play again? (y/n): ")
+              if mes == "y":
+                 hangman();
+              elif mes == "Y":
+                 hangman();
+              elif mes == "n":
+                 print("Okay then! have a nice day.")
+              elif mes == "N":
+                 print("Okay then! have a nice day.")
+              else:
+                 print("Invalid Input");
 
       hangman();
     
     
     elif b == "madlibs":
-      adj = input("Adjective: ")
-      verb1 = input("Verb: ")
-      verb2 = input("Verb: ")
-      friends_name = input("Friends name: ")
+        def madlibs():
+          verb1 = input("Choose a verb: ")
+          verb2 = input("Choose a verb: ")
+          noun = input("Choose a noun: ")
+          adj = input("Choose an adjective: ")
 
-      madlib = f"APUSH is so {adj}! It makes me want to {verb1} because it's too much work and isn't even intellectually stimulating. I honestly might {verb2} every time I have that class with {friends_name} because it's so boring!"
-
-      print(madlib);
-
+          sentence1 = f"I will {verb1} with my friends, then i'll {verb2} to my {adj} {noun}"
+          sentence2 = f"I want to get {verb1} with my friends, then I will {verb2} my {adj} {noun}"
+          b = [sentence1, sentence2];
+          print(random.choice(b));
+          c = input("That was so fun! Would you like to play again?: ");
+          if c == "yes":
+            madlibs();
+          else:
+            print("Okay then, have a nice day!");
+        madlibs();
 
     else:
      print("Invalid input, try again")
      games();
-    
+
 games();
